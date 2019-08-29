@@ -964,7 +964,7 @@ params = CGI.parse(uri.query || "")
   def run_assets_precompile_rake_task
     instrument 'ruby.run_assets_precompile_rake_task' do
 
-      precompile = rake.task("assets:precompile")
+      precompile = rake.task("assets:precompile --trace")
       return true unless precompile.is_defined?
 
       topic "Precompiling assets"
